@@ -34,7 +34,7 @@ for numQuiz in range(35):
 	key.write((' ' * 20) + 'States and their Capitals Quiz ' + 'Answer Key # ' + str(numQuiz + 1) + ('\n' * 2))
 
 	# Randomly shuffle order of states to ask.
-	states = list(answerKey.keys())															# list of capitals
+	states = list(answerKey.keys())												# list of capitals
 	random.shuffle(states)
 
 	# Write the questions and corresponding answers into the text file
@@ -46,9 +46,9 @@ for numQuiz in range(35):
 		
 		for choice in letterChoices:
 			if choice == ans:
-				quiz.write((' ' * 4) + ans + '. ' + answerKey[states[question]] + '\n')		# print right answer
+				quiz.write((' ' * 4) + ans + '. ' + answerKey[states[question]] + '\n')				# print right answer
 			else:
-				while True:																	# print randomized wrong answer
+				while True:											# print randomized wrong answer
 					notAns = random.randint(0, 49)
 					if notAns != question:
 						break
