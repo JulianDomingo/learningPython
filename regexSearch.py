@@ -1,4 +1,4 @@
-#! python 3
+#! python3
 # opens all .txt files in a folder (specified by user) and
 # searches for any line that matches a regex (also specified
 # by user)
@@ -12,10 +12,12 @@ os.chdir(input())
 txtFiles = txtFinder.findall(', '.join(os.listdir()))							# finds all .txt files and stores in list
 
 print('Enter regular expression for searching .txt files:')
-print("Format: r'<expression>'")
+print("Format: <expression>")
 userRegex = re.compile(input())													# create user-specified regex
 
-for file in txtFiles:
-	print(', '.join(userRegex.findall(file)))									# find all occurrences and convert to str before output to console
+print(os.listdir())
 
+for file in txtFiles:
+	content = open(file, 'r')
+	print(', '.join(userRegex.findall(content.read())))									# find all occurrences and convert to str before output to console
 
